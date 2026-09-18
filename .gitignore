@@ -26,3 +26,8 @@ postgres_data/
 
 # Database backups (scripts/backup_db.sh)
 backups/
+
+# Guest/participant lists with real personal data (student numbers, national codes)
+guest_list*.xlsx
+guest list*.xlsx
+backend/participants_import.csv
