@@ -47,5 +47,5 @@ jobs:
             --platform=docker \
             --dockerfile=Dockerfile.prod \
             --port=80 \
-            --build-arg="VITE_API_BASE_URL=https://graduation-backend.liara.run/api" \
+            --build-arg="VITE_API_BASE_URL=/api" \
             --no-app-logs
