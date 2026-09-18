@@ -25,7 +25,7 @@ jobs:
             --platform=docker \
             --dockerfile=Dockerfile.prod \
             --port=8000 \
-            --disks media=/app/media \
+            --disks media:/app/media \
             --no-app-logs
 
   deploy-frontend:
