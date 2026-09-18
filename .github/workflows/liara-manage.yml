@@ -1,0 +1,23 @@
+name: Liara Manage
+
+on:
+  workflow_dispatch:
+    inputs:
+      command:
+        description: "Django management command to run on graduation-backend"
+        required: true
+        default: "migrate"
+
+jobs:
+  manage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run command on Liara backend
+        env:
+          LIARA_TOKEN: ${{ secrets.LIARA_API_TOKEN }}
+        run: |
+          npm i -g @liara/cli@9
+          liara shell \
+            --app="graduation-backend" \
+            --api-token="$LIARA_TOKEN" \
+            --command="python manage.py ${{ inputs.command }}"
