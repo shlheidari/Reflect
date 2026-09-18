@@ -1,0 +1,51 @@
+name: CD-Liara
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy-backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "22"
+      - name: Deploy backend to Liara
+        env:
+          LIARA_TOKEN: ${{ secrets.LIARA_API_TOKEN }}
+        run: |
+          npm i -g @liara/cli@9
+          liara deploy \
+            --app="graduation-backend" \
+            --api-token="$LIARA_TOKEN" \
+            --path=backend \
+            --platform=docker \
+            --dockerfile=Dockerfile.prod \
+            --port=8000 \
+            --disks=media=/app/media \
+            --no-app-logs
+
+  deploy-frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "22"
+      - name: Deploy frontend to Liara
+        env:
+          LIARA_TOKEN: ${{ secrets.LIARA_API_TOKEN }}
+        run: |
+          npm i -g @liara/cli@9
+          liara deploy \
+            --app="graduation-frontend" \
+            --api-token="$LIARA_TOKEN" \
+            --path=frontend \
+            --platform=docker \
+            --dockerfile=Dockerfile.prod \
+            --port=80 \
+            --build-arg="VITE_API_BASE_URL=https://graduation-backend.liara.run/api" \
+            --no-app-logs
