@@ -94,7 +94,7 @@ the repo root, with `.env.prod` present):
 ./scripts/backup_db.sh
 ```
 
-Writes to `backups/graduation_<timestamp>.sql.gz` (gitignored). Schedule it
+Writes to `backups/reflect_<timestamp>.sql.gz` (gitignored). Schedule it
 with cron for regular backups, e.g. nightly:
 
 ```cron
@@ -105,7 +105,7 @@ with cron for regular backups, e.g. nightly:
 environment first):
 
 ```bash
-gunzip -c backups/graduation_<timestamp>.sql.gz | \
+gunzip -c backups/reflect_<timestamp>.sql.gz | \
   docker compose -f docker-compose.prod.yml --env-file .env.prod exec -T db \
   psql -U "$POSTGRES_USER" "$POSTGRES_DB"
 ```
@@ -118,7 +118,7 @@ They are not included in `scripts/backup_db.sh` — back up that volume
 separately if avatar loss would matter:
 
 ```bash
-docker run --rm -v graduation_backend_media:/data -v "$PWD/backups":/backup \
+docker run --rm -v reflect_backend_media:/data -v "$PWD/backups":/backup \
   alpine tar czf /backup/media_$(date +%Y%m%d_%H%M%S).tar.gz -C /data .
 ```
 

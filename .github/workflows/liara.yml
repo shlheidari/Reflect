@@ -19,7 +19,7 @@ jobs:
         run: |
           npm i -g @liara/cli@9
           liara deploy \
-            --app="graduation-backend" \
+            --app="reflect-backend" \
             --api-token="$LIARA_TOKEN" \
             --path=backend \
             --platform=docker \
@@ -41,7 +41,7 @@ jobs:
         run: |
           npm i -g @liara/cli@9
           liara deploy \
-            --app="graduation-frontend" \
+            --app="reflect-frontend" \
             --api-token="$LIARA_TOKEN" \
             --path=frontend \
             --platform=docker \

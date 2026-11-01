@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       command:
-        description: "Django management command to run on graduation-backend"
+        description: "Django management command to run on reflect-backend"
         required: true
         default: "migrate"
 
@@ -18,6 +18,6 @@ jobs:
         run: |
           npm i -g @liara/cli@9
           liara shell \
-            --app="graduation-backend" \
+            --app="reflect-backend" \
             --api-token="$LIARA_TOKEN" \
             --command="python manage.py ${{ inputs.command }}"

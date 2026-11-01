@@ -17,7 +17,7 @@ fi
 
 mkdir -p backups
 timestamp=$(date +%Y%m%d_%H%M%S)
-outfile="backups/graduation_${timestamp}.sql.gz"
+outfile="backups/reflect_${timestamp}.sql.gz"
 
 docker compose -f docker-compose.prod.yml --env-file "$ENV_FILE" exec -T db \
     pg_dump -U "$POSTGRES_USER" "$POSTGRES_DB" | gzip > "$outfile"

@@ -7,7 +7,7 @@ class ForwardedHostPageNumberPagination(PageNumberPagination):
     """PageNumberPagination whose next/previous links honor X-Forwarded-Host.
 
     nginx proxies to this backend over Liara's private network and sets a
-    static `Host: graduation-backend` header (see frontend/nginx.conf) so
+    static `Host: reflect-backend` header (see frontend/nginx.conf) so
     ALLOWED_HOSTS never has to change when the public frontend domain does.
     But that same internal hostname otherwise leaks into these links via
     request.build_absolute_uri(), since DRF builds them from request.get_host().
