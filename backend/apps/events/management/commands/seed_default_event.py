@@ -10,7 +10,7 @@ EVENT_STATUS = Event.Status.OPEN
 
 
 class Command(BaseCommand):
-    help = "Create the graduation event for this deployment, if it doesn't exist yet."
+    help = "Create the default event for this deployment, if it doesn't exist yet."
 
     def handle(self, *args, **options):
         event, created = Event.objects.get_or_create(

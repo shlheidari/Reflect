@@ -19,7 +19,7 @@ class MemoryCreationTests(AuthMixin, APITestCase):
 
     def setUp(self):
         cache.clear()
-        self.event = Event.objects.create(name="Graduation 2026", status=Event.Status.OPEN)
+        self.event = Event.objects.create(name="Event 2026", status=Event.Status.OPEN)
         self.ali = make_participant("ali", self.event, display_name="Ali", password="ali-pass-123")
         self.sara = make_participant("sara", self.event, display_name="Sara", password="sara-pass-123")
         self.category = make_category(self.event, "vibe", order=0, required=True)
@@ -97,7 +97,7 @@ class MyMemoriesTests(AuthMixin, APITestCase):
 
     def setUp(self):
         cache.clear()
-        self.event = Event.objects.create(name="Graduation 2026", status=Event.Status.OPEN)
+        self.event = Event.objects.create(name="Event 2026", status=Event.Status.OPEN)
         self.me = make_participant("ali", self.event, display_name="Ali", password="ali-pass-123")
         self.author_a = make_participant("sara", self.event, display_name="Sara", password="sara-pass-123")
         self.author_b = make_participant(
@@ -171,7 +171,7 @@ class MemoryReportTests(AuthMixin, APITestCase):
 
     def setUp(self):
         cache.clear()
-        self.event = Event.objects.create(name="Graduation 2026", status=Event.Status.OPEN)
+        self.event = Event.objects.create(name="Event 2026", status=Event.Status.OPEN)
         self.reporter = make_participant("ali", self.event, display_name="Ali", password="ali-pass-123")
         self.author = make_participant("sara", self.event, display_name="Sara", password="sara-pass-123")
         self.bystander = make_participant(
@@ -281,7 +281,7 @@ class MemoryDatabaseConstraintTests(APITestCase):
 
     def setUp(self):
         cache.clear()
-        self.event = Event.objects.create(name="Graduation 2026", status=Event.Status.OPEN)
+        self.event = Event.objects.create(name="Event 2026", status=Event.Status.OPEN)
         self.me = make_participant("ali", self.event, "Ali", password="ali-pass-123")
 
     def test_db_rejects_self_targeted_memory_bypassing_the_service_layer(self):
@@ -299,7 +299,7 @@ class MemoryContentSafetyTests(AuthMixin, APITestCase):
 
     def setUp(self):
         cache.clear()
-        self.event = Event.objects.create(name="Graduation 2026", status=Event.Status.OPEN)
+        self.event = Event.objects.create(name="Event 2026", status=Event.Status.OPEN)
         self.author = make_participant("ali", self.event, "Ali", password="ali-pass-123")
         self.target = make_participant("sara", self.event, "Sara", password="sara-pass-123")
         self.category = make_category(self.event, "vibe", order=0)
@@ -343,7 +343,7 @@ class MemoryPrivacyTests(AuthMixin, APITestCase):
 
     def setUp(self):
         cache.clear()
-        self.event = Event.objects.create(name="Graduation 2026", status=Event.Status.OPEN)
+        self.event = Event.objects.create(name="Event 2026", status=Event.Status.OPEN)
         self.author_a = make_participant("ali", self.event, "Ali Rezaei", password="ali-pass-123")
         self.target_b = make_participant("mohammad", self.event, "Mohammad", password="reza-pass-123")
         self.category = make_category(self.event, "vibe", order=0)

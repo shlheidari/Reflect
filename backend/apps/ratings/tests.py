@@ -45,7 +45,7 @@ class AuthMixin:
 class RatingCategoryListTests(AuthMixin, APITestCase):
     def setUp(self):
         cache.clear()
-        self.event = Event.objects.create(name="Graduation 2026", status=Event.Status.OPEN)
+        self.event = Event.objects.create(name="Event 2026", status=Event.Status.OPEN)
         self.other_event = Event.objects.create(name="Other Event", status=Event.Status.OPEN)
 
         self.me = make_participant("ali", self.event, display_name="Ali", password="ali-pass-123")
@@ -99,7 +99,7 @@ class RatingCategoryListTests(AuthMixin, APITestCase):
 class AdminRatingCategoryApiTests(AuthMixin, APITestCase):
     def setUp(self):
         cache.clear()
-        self.event = Event.objects.create(name="Graduation 2026")
+        self.event = Event.objects.create(name="Event 2026")
         self.other_event = Event.objects.create(name="Other Event")
         self.admin = User.objects.create_user(username="admin", password="admin-pass-123", is_staff=True)
         make_participant("ali", self.event, display_name="Ali", password="ali-pass-123")
@@ -198,7 +198,7 @@ class AdminRatingCategoryApiTests(AuthMixin, APITestCase):
 class RatingCategoryReorderTests(AuthMixin, APITestCase):
     def setUp(self):
         cache.clear()
-        self.event = Event.objects.create(name="Graduation 2026")
+        self.event = Event.objects.create(name="Event 2026")
         self.admin = User.objects.create_user(username="admin", password="admin-pass-123", is_staff=True)
         make_participant("ali", self.event, display_name="Ali", password="ali-pass-123")
 
@@ -270,7 +270,7 @@ class RatingCategoryReorderTests(AuthMixin, APITestCase):
 
 class SeedRatingCategoriesCommandTests(APITestCase):
     def test_seeds_all_25_categories_for_an_event(self):
-        event = Event.objects.create(name="Graduation 2026")
+        event = Event.objects.create(name="Event 2026")
 
         call_command("seed_rating_categories")
 
@@ -282,7 +282,7 @@ class SeedRatingCategoriesCommandTests(APITestCase):
         self.assertFalse(creativity.required)
 
     def test_seed_is_idempotent(self):
-        Event.objects.create(name="Graduation 2026")
+        Event.objects.create(name="Event 2026")
 
         call_command("seed_rating_categories")
         call_command("seed_rating_categories")
@@ -290,7 +290,7 @@ class SeedRatingCategoriesCommandTests(APITestCase):
         self.assertEqual(RatingCategory.objects.count(), 25)
 
     def test_seed_scoped_to_a_single_event_with_event_flag(self):
-        event_one = Event.objects.create(name="Graduation 2026")
+        event_one = Event.objects.create(name="Event 2026")
         Event.objects.create(name="Other Event")
 
         call_command("seed_rating_categories", event=event_one.id)
@@ -302,7 +302,7 @@ class SeedRatingCategoriesCommandTests(APITestCase):
 class RatingSubmissionTests(AuthMixin, APITestCase):
     def setUp(self):
         cache.clear()
-        self.event = Event.objects.create(name="Graduation 2026", status=Event.Status.OPEN)
+        self.event = Event.objects.create(name="Event 2026", status=Event.Status.OPEN)
         self.other_event = Event.objects.create(name="Other Event", status=Event.Status.OPEN)
 
         self.evaluator = make_participant("ali", self.event, "Ali", password="ali-pass-123")
@@ -586,7 +586,7 @@ class RatingSubmissionTests(AuthMixin, APITestCase):
 class ParticipantRatingAnnotationTests(AuthMixin, APITestCase):
     def setUp(self):
         cache.clear()
-        self.event = Event.objects.create(name="Graduation 2026", status=Event.Status.OPEN)
+        self.event = Event.objects.create(name="Event 2026", status=Event.Status.OPEN)
         self.me = make_participant("ali", self.event, "Ali", password="ali-pass-123")
         self.other = make_participant("sara", self.event, "Sara", password="sara-pass-123")
         self.third = make_participant("reza", self.event, "Reza", password="reza-pass-123")
@@ -624,7 +624,7 @@ class MyResultsTests(AuthMixin, APITestCase):
     def setUp(self):
         cache.clear()
         self.event = Event.objects.create(
-            name="Graduation 2026", status=Event.Status.OPEN, minimum_ratings_for_results=3
+            name="Event 2026", status=Event.Status.OPEN, minimum_ratings_for_results=3
         )
         self.other_event = Event.objects.create(name="Other Event", status=Event.Status.OPEN)
 
@@ -743,7 +743,7 @@ class RatingDatabaseConstraintTests(APITestCase):
 
     def setUp(self):
         cache.clear()
-        self.event = Event.objects.create(name="Graduation 2026", status=Event.Status.OPEN)
+        self.event = Event.objects.create(name="Event 2026", status=Event.Status.OPEN)
         self.a = make_participant("a1", self.event, "A1", password="a1-pass-123")
         self.b = make_participant("b1", self.event, "B1", password="b1-pass-123")
         self.category = make_category(self.event, "vibe", order=0)
@@ -784,7 +784,7 @@ class MyResultsPrivacyTests(AuthMixin, APITestCase):
     def setUp(self):
         cache.clear()
         self.event = Event.objects.create(
-            name="Graduation 2026", status=Event.Status.OPEN, minimum_ratings_for_results=1
+            name="Event 2026", status=Event.Status.OPEN, minimum_ratings_for_results=1
         )
         self.evaluator_a = make_participant("ali", self.event, "Ali Rezaei", password="ali-pass-123")
         self.target_b = make_participant("mohammad", self.event, "Mohammad", password="reza-pass-123")

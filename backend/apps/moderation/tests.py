@@ -20,7 +20,7 @@ class MemoryHideViewTests(AuthMixin, APITestCase):
 
     def setUp(self):
         cache.clear()
-        self.event = Event.objects.create(name="Graduation 2026", status=Event.Status.OPEN)
+        self.event = Event.objects.create(name="Event 2026", status=Event.Status.OPEN)
         self.admin = User.objects.create_user(username="admin", password="admin-pass-123", is_staff=True)
         self.author = make_participant("sara", self.event, display_name="Sara", password="sara-pass-123")
         self.target = make_participant("ali", self.event, display_name="Ali", password="ali-pass-123")
@@ -68,7 +68,7 @@ class MemoryRestoreViewTests(AuthMixin, APITestCase):
 
     def setUp(self):
         cache.clear()
-        self.event = Event.objects.create(name="Graduation 2026", status=Event.Status.OPEN)
+        self.event = Event.objects.create(name="Event 2026", status=Event.Status.OPEN)
         self.admin = User.objects.create_user(username="admin", password="admin-pass-123", is_staff=True)
         self.author = make_participant("sara", self.event, display_name="Sara", password="sara-pass-123")
         self.target = make_participant("ali", self.event, display_name="Ali", password="ali-pass-123")
@@ -118,7 +118,7 @@ class AdminReportApiTests(AuthMixin, APITestCase):
 
     def setUp(self):
         cache.clear()
-        self.event = Event.objects.create(name="Graduation 2026", status=Event.Status.OPEN)
+        self.event = Event.objects.create(name="Event 2026", status=Event.Status.OPEN)
         self.admin = User.objects.create_user(username="admin", password="admin-pass-123", is_staff=True)
         self.reporter = make_participant("ali", self.event, display_name="Ali", password="ali-pass-123")
         self.author = make_participant("sara", self.event, display_name="Sara", password="sara-pass-123")

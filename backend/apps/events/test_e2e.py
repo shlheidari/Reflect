@@ -35,7 +35,7 @@ class FullProductFlowE2ETest(AuthMixin, APITestCase):
 
         # 2. Admin creates an event (starts DRAFT; opened once set up).
         response = self.client.post(
-            "/api/admin/events/", {"name": "Graduation 2026", "status": "DRAFT"}, format="json"
+            "/api/admin/events/", {"name": "Event 2026", "status": "DRAFT"}, format="json"
         )
         self.assertEqual(response.status_code, 201, response.data)
         event_id = response.data["id"]

@@ -17,7 +17,7 @@ export function AdminLayout() {
       <aside className="hidden shrink-0 border-r border-gray-200 bg-white md:flex md:w-60 md:flex-col md:justify-between">
         <div>
           <div className="p-5">
-            <p className="text-lg font-bold text-gray-900">پنل مدیریت 🎓</p>
+            <p className="text-lg font-bold text-gray-900">پنل مدیریت آینه 🪞</p>
           </div>
           <nav className="space-y-1 px-3">
             {navItems.map((item) => (

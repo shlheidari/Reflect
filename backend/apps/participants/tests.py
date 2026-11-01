@@ -25,7 +25,7 @@ def make_participant(username, event, display_name=None, is_active=True, passwor
 class ParticipantListTests(APITestCase):
     def setUp(self):
         cache.clear()
-        self.event = Event.objects.create(name="Graduation 2026", status=Event.Status.OPEN)
+        self.event = Event.objects.create(name="Event 2026", status=Event.Status.OPEN)
         self.other_event = Event.objects.create(name="Other Event", status=Event.Status.OPEN)
 
         self.me = make_participant("ali", self.event, display_name="Ali", password="ali-pass-123")
@@ -88,7 +88,7 @@ class ParticipantListTests(APITestCase):
 class CurrentUserParticipantTests(APITestCase):
     def setUp(self):
         cache.clear()
-        self.event = Event.objects.create(name="Graduation 2026")
+        self.event = Event.objects.create(name="Event 2026")
 
     def auth_as(self, username, password):
         login = self.client.post(
@@ -131,7 +131,7 @@ class CurrentUserParticipantTests(APITestCase):
 class AdminParticipantApiTests(APITestCase):
     def setUp(self):
         cache.clear()
-        self.event = Event.objects.create(name="Graduation 2026")
+        self.event = Event.objects.create(name="Event 2026")
         self.admin = User.objects.create_user(username="admin", password="admin-pass-123", is_staff=True)
         self.participant = make_participant("ali", self.event, display_name="Ali", password="ali-pass-123")
 

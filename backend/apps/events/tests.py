@@ -19,7 +19,7 @@ class AuthMixin:
 class AdminEventApiTests(AuthMixin, APITestCase):
     def setUp(self):
         cache.clear()
-        self.event = Event.objects.create(name="Graduation 2026", status=Event.Status.DRAFT)
+        self.event = Event.objects.create(name="Event 2026", status=Event.Status.DRAFT)
         self.admin = User.objects.create_user(username="admin", password="admin-pass-123", is_staff=True)
         make_participant("ali", self.event, display_name="Ali", password="ali-pass-123")
 
@@ -38,7 +38,7 @@ class AdminEventApiTests(AuthMixin, APITestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertIsInstance(response.data, list)
-        self.assertEqual(response.data[0]["name"], "Graduation 2026")
+        self.assertEqual(response.data[0]["name"], "Event 2026")
 
     def test_admin_can_update_event_settings(self):
         self.auth_as("admin", "admin-pass-123")
@@ -67,11 +67,11 @@ class AdminEventApiTests(AuthMixin, APITestCase):
         self.auth_as("admin", "admin-pass-123")
 
         response = self.client.post(
-            "/api/admin/events/", {"name": "Graduation 2027", "status": "DRAFT"}, format="json"
+            "/api/admin/events/", {"name": "Event 2027", "status": "DRAFT"}, format="json"
         )
 
         self.assertEqual(response.status_code, 201)
-        self.assertTrue(Event.objects.filter(name="Graduation 2027").exists())
+        self.assertTrue(Event.objects.filter(name="Event 2027").exists())
 
     def test_admin_cannot_delete_event(self):
         self.auth_as("admin", "admin-pass-123")
@@ -85,7 +85,7 @@ class AdminEventApiTests(AuthMixin, APITestCase):
 class AdminStatisticsTests(AuthMixin, APITestCase):
     def setUp(self):
         cache.clear()
-        self.event = Event.objects.create(name="Graduation 2026", status=Event.Status.OPEN)
+        self.event = Event.objects.create(name="Event 2026", status=Event.Status.OPEN)
         self.other_event = Event.objects.create(name="Other Event", status=Event.Status.OPEN)
         self.admin = User.objects.create_user(username="admin", password="admin-pass-123", is_staff=True)
 

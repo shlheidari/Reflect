@@ -35,8 +35,8 @@ export function LoginPage() {
         className="w-full max-w-sm rounded-3xl bg-white p-8 shadow-xl shadow-fuchsia-900/5"
       >
         <div className="text-center">
-          <span className="text-5xl">🎓</span>
-          <h1 className="mt-3 text-xl font-bold text-gray-900">جشن فارغ‌التحصیلی</h1>
+          <span className="text-5xl">🪞</span>
+          <h1 className="mt-3 text-xl font-bold text-gray-900">آینه</h1>
           <p className="mt-1 text-sm text-gray-500">با نام کاربری‌ای که از مدیر گرفتی وارد شو</p>
         </div>
 

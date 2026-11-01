@@ -194,7 +194,7 @@ export function RatingPage() {
           <div className="w-full max-w-sm rounded-2xl bg-white p-5 text-center">
             <p className="font-bold text-gray-900">آماده‌ای نظرت رو ثبت کنی؟</p>
             <p className="mt-2 text-sm text-gray-500">
-              بعد از ثبت، طبق تنظیمات جشن ممکنه امکان ویرایش وجود داشته باشه.
+              بعد از ثبت، طبق تنظیمات رویداد ممکنه امکان ویرایش وجود داشته باشه.
             </p>
             <div className="mt-4 flex gap-2">
               <button

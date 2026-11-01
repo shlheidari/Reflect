@@ -2,9 +2,9 @@
 
 ## 1. Product Concept
 
-A private graduation-event platform where participants anonymously rate each other and share memories.
+**Ayneh (آینه, "Mirror")** is a private platform where members of a closed group (a class, team, event, camp, workplace…) anonymously rate each other and share memories. Graduation parties are one use case, not the only one.
 
-The purpose is entertainment, nostalgia, and collecting anonymous impressions of classmates/colleagues.
+The purpose is entertainment, nostalgia, and collecting anonymous impressions of classmates, colleagues, teammates or friends.
 
 The application is not intended to be a public social network.
 
@@ -296,7 +296,7 @@ No people remaining:
 
 Potential future features:
 
-- graduation countdown
+- event countdown
 - anonymous "superlatives"
 - downloadable personal result card
 - event QR code

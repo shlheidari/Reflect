@@ -2,7 +2,7 @@
 
 ## 1. Design Goal
 
-The experience should feel like a fun graduation activity, not a clinical questionnaire.
+The experience should feel like a fun group activity, not a clinical questionnaire.
 
 Primary device:
 
@@ -197,7 +197,7 @@ Before final submission:
 ```text
 آماده‌ای نظرت رو ثبت کنی؟
 
-بعد از ثبت، طبق تنظیمات جشن ممکنه امکان ویرایش وجود داشته باشه.
+بعد از ثبت، طبق تنظیمات رویداد ممکنه امکان ویرایش وجود داشته باشه.
 
 [ثبت نظر]
 [برگرد]

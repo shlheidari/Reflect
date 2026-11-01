@@ -1,7 +1,9 @@
-# Graduation Rating Platform
+# Ayneh (آینه) — Anonymous Group Feedback Platform
 
-A private web app for a graduation event: participants anonymously rate and
-write memories about each other. See `docs/PRODUCT.md` for the full product
+A private web app for any closed group — a graduation party, a class, a team,
+a camp, a workplace: participants anonymously rate and write memories about
+each other. "Events" are generic containers, and rating categories are fully
+admin-configurable, so nothing in the product is tied to one occasion. See `docs/PRODUCT.md` for the full product
 spec and `docs/ROADMAP.md` for build phases.
 
 Stack: Django + DRF + PostgreSQL + JWT (backend), React + TypeScript + Vite +

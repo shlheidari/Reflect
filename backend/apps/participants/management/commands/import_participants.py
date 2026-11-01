@@ -19,7 +19,7 @@ ENV_VAR = "PARTICIPANTS_IMPORT_DATA_B64"
 
 class Command(BaseCommand):
     help = (
-        "Create User+Participant rows for graduation guests from CSV data "
+        "Create User+Participant rows for event guests from CSV data "
         f"(name, student number, national code) base64-encoded in the {ENV_VAR} "
         "env var. Username = student number, password = national code."
     )

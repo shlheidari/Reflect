@@ -205,4 +205,4 @@ prior session.
    `RatingPage` (full submit flow) and the admin pages — the highest-value
    next test investment given item 1 above.
 4. Nothing else is blocking — the application is ready to run the actual
-   graduation event as currently built.
+   event as currently built.
