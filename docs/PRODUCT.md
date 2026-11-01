@@ -2,7 +2,7 @@
 
 ## 1. Product Concept
 
-**Ayneh (آینه, "Mirror")** is a private platform where members of a closed group (a class, team, event, camp, workplace…) anonymously rate each other and share memories. Graduation parties are one use case, not the only one.
+**Reflect (آینه, "Mirror")** is a private platform where members of a closed group (a class, team, event, camp, workplace…) anonymously rate each other and share memories. Graduation parties are one use case, not the only one.
 
 The purpose is entertainment, nostalgia, and collecting anonymous impressions of classmates, colleagues, teammates or friends.
 

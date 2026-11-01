@@ -98,7 +98,7 @@ Writes to `backups/graduation_<timestamp>.sql.gz` (gitignored). Schedule it
 with cron for regular backups, e.g. nightly:
 
 ```cron
-0 3 * * * cd /path/to/graduation && ./scripts/backup_db.sh >> backups/backup.log 2>&1
+0 3 * * * cd /path/to/reflect && ./scripts/backup_db.sh >> backups/backup.log 2>&1
 ```
 
 **Restore** (destructive — confirm you're restoring into the intended

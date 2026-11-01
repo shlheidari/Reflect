@@ -1,4 +1,4 @@
-# Ayneh (آینه) — Anonymous Group Feedback Platform
+# Reflect (آینه) — Anonymous Group Feedback Platform
 
 A private web app for any closed group — a graduation party, a class, a team,
 a camp, a workplace: participants anonymously rate and write memories about

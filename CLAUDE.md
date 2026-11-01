@@ -1,8 +1,8 @@
-# Ayneh (آینه) — Anonymous Group Feedback Platform — Claude Code Instructions
+# Reflect (آینه) — Anonymous Group Feedback Platform — Claude Code Instructions
 
 ## 1. Project Overview
 
-Build a private web application (named **Ayneh / آینه**) for any closed group or event (graduation party, class, team, camp, workplace…) where participants can anonymously rate and write memories about other participants.
+Build a private web application (named **Reflect / آینه**) for any closed group or event (graduation party, class, team, camp, workplace…) where participants can anonymously rate and write memories about other participants.
 
 The application is intended for a closed group of people attending the same event; graduation is only one example, so avoid occasion-specific wording in code and UI.
 
